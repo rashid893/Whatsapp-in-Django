@@ -1,0 +1,74 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whatsapp</title>
+    <link rel="shortcut icon" href="{% static 'img/download.jpg' %}" type="image/x-icon">
+ <!-- Bootstrap CSS -->
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+
+     <!-- Font Awesome CSS -->
+     <link rel="stylesheet" href="{% static '/css/all.min.css' %}">
+  
+      <style>
+       
+      </style>
+</head>
+<body>
+ 
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/fake"> </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact Us</a>
+        </li>
+  
+      </ul>
+    </div>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
+  <form action="/senddata/" method="POST">
+    {% csrf_token %}
+    <div class="container">
+      <h3> Send a Message on any whatsapp</h3>
+      <hr>
+      <div class="form-group">
+        <label for="name">Number</label>
+    <input type="text" name="number" class="form-control" required autofocus placeholder="Enter Whatsap Numb er">
+    
+  </div>
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea name="message"  rows="5" class="form-control" required placeholder="Write Message Here"></textarea>
+  </div>
+    <input type="submit" value="submit" class="btn btn-primary">
+{{info}}
+
+  </form>
+</div>
+
+        <script  src="{% static 'js/jquery.min.js' %}"></script>
+  
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/all.min.js' %}"></script>
+          
+</body>
+</html>
